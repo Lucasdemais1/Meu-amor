@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Para o Amor da Minha Vida</title>
+    <style>
+        body {
+            background-color: #fff0f5;
+            color: #333;
+            font-family: 'Courier New', Courier, monospace;
+            padding: 50px;
+            font-size: 20px;
+            line-height: 1.8;
+        }
+
+        #texto {
+            white-space: pre-wrap;
+            border-left: 3px solid #ff85a2;
+            padding-left: 20px;
+        }
+
+        audio {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="texto"></div>
+    <audio id="musica" autoplay loop>
+        <source src="musica.mp3" type="audio/mpeg">
+        Seu navegador não suporta áudio.
+    </audio>
+
+    <script>
+        const mensagem = `Enfim, chegamos em mais uma etapa das nossas vidas, meu amor. Dessa vez mais crescidos, mais adultos, mais decididos e o mais importante, nos amando acima de tudo. Fico orgulhoso da mulher que você está se tornando, você é um motivo para que eu de um forte sorriso todos os dias e me sinto honrado de poder acompanhar sua jornada tão linda, me alegro de poder ser seu maior fã e a pessoa que torce pelo seu sucesso dia após dia. Espero que hoje você entenda o tamanho do meu amor por você, compreenda o quão grande é minha paixão e sinta o mesmo desejo de compartilhar mais momentos de cumplicidade comigo.
+Me alegro todos os dias de ter ao meu lado uma mulher tão maravilhosa, de fato, a pessoa perfeita para passar o resto da minha vida comigo, sendo feliz, criando uma família e por fim nos orgulhando da história que construímos juntos. Estarei sempre ao teu lado, como seu amigo, como um cúmplice, um porto seguro e esperançosamente, como teu homem.
+Você aceita namorar comigo?`;
+
+        const textoElemento = document.getElementById('texto');
+        let i = 0;
+
+        function escrever() {
+            if (i < mensagem.length) {
+                textoElemento.innerHTML += mensagem.charAt(i);
+                i++;
+                setTimeout(escrever, 40);
+            }
+        }
+
+        window.onload = () => {
+            const musica = document.getElementById("musica");
+            musica.play().catch(() => {
+                document.body.addEventListener('click', () => {
+                    musica.play();
+                }, { once: true });
+            });
+            escrever();
+        }
+    </script>
+</body>
+</html>

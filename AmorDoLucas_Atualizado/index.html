@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Quem é o amor da vida do Lucas?</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #ffe6f0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        h1 {
+            color: #d6336c;
+        }
+
+        .question-box {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+
+        button {
+            display: block;
+            width: 200px;
+            margin: 10px auto;
+            padding: 10px;
+            border: none;
+            border-radius: 10px;
+            background-color: #ffb3c6;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #ff80a1;
+        }
+    </style>
+</head>
+<body>
+    <div class="question-box">
+        <h1>Quem é o amor da vida do Lucas?</h1>
+        <button onclick="respostaErrada()">Ninguém</button>
+        <button onclick="respostaErrada()">Santos</button>
+        <button onclick="respostaErrada()">Anime</button>
+        <button onclick="respostaCerta()">Você</button>
+    </div>
+
+    <script>
+        function respostaErrada() {
+            alert("Não, você sabe quem é o amor da vida dele.");
+        }
+
+        function respostaCerta() {
+            window.location.href = "resposta.html";
+        }
+    </script>
+</body>
+</html>
